@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lethal Motorsports - Performance & Mechanic Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+<!-- Navigation Bar -->
+<nav id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center space-x-3">
+      <img src="images/logo.avif" class="h-24 w-48">
+    </a>
+    <div class="space-x-6 hidden text-lg md:flex">
+      <a href="#home" class="text-white hover:text-red-600 font-semibold transition">Home</a>
+      <a href="#about" class="text-white hover:text-red-600 font-semibold transition">About Us</a>
+      <a href="#services" class="text-white hover:text-red-600 font-semibold transition">Services</a>
+      <a href="#achievements" class="text-white hover:text-red-600 font-semibold transition">Achievements</a>
+      <a href="#contact" class="text-white hover:text-red-600 font-semibold transition">Contact</a>
+    </div>
+    <!-- Mobile menu button -->
+    <button id="nav-toggle" class="md:hidden text-white focus:outline-none transition">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="nav-menu" class="md:hidden hidden px-6 pb-4 bg-white text-gray-700">
+    <a href="#home" class="block py-2 font-semibold hover:text-red-600">Home</a>
+    <a href="#about" class="block py-2 font-semibold hover:text-red-600">About Us</a>
+    <a href="#services" class="block py-2 font-semibold hover:text-red-600">Services</a>
+    <a href="#achievements" class="block py-2 font-semibold hover:text-red-600">Achievements</a>
+    <a href="#contact" class="block py-2 font-semibold hover:text-red-600">Contact</a>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navbar = document.getElementById('navbar');
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      // Toggle mobile menu
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+      });
+
+      // Scroll effect
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove('bg-transparent');
+          navbar.classList.add('bg-white', 'shadow');
+          navbar.querySelectorAll('a').forEach(link => link.classList.replace('text-white', 'text-gray-700'));
+          navToggle.classList.replace('text-white', 'text-gray-700');
+        } else {
+          navbar.classList.add('bg-transparent');
+          navbar.classList.remove('bg-white', 'shadow');
+          navbar.querySelectorAll('a').forEach(link => link.classList.replace('text-gray-700', 'text-white'));
+          navToggle.classList.replace('text-gray-700', 'text-white');
+        }
+      });
+    });
+  </script>
+</nav>
+
+<!-- Hero Section -->
+<section class="h-[650px] relative bg-cover bg-center text-white" style="background-image: url('images/newhero.png');">
+  <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+  
+  <!-- Content wrapper: aligned to bottom using flex -->
+  <div class="relative z-10 flex flex-col items-end justify-end h-full text-right px-6 pb-12">
+    <p class="text-xl md:text-2xl mb-6 max-w-lg">Tuning &bull; Software &bull; Engine Rebuilds &bull; Turbos &bull; Water Methanol &bull; Down Pipes & Free Flows &bull; Branches</p>
+    
+    <div class="flex flex-col md:flex-row gap-4 justify-end">
+      <a href="#contact" class="bg-red-900 hover:bg-red-800 text-white px-6 py-3 rounded-full font-semibold shadow transition">Book Appointment</a>
+      <a href="#" class="bg-white hover:bg-gray-100 text-red-700 px-6 py-3 rounded-full font-semibold shadow border border-red-600 transition">View Services</a>
+  </div>
+  </div>
+</section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-xl text-center text-gray-400 mb-10">Services <br> <span class="text-4xl font-bold text-gray-800">Striving For Service Excellence Is Our Aim</span></h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Card 1: Engine Rebuilds -->
+<div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden flex items-center p-6">
+  <div>
+    <i class="fas fa-cogs text-4xl text-red-900 mb-4"></i>
+    <h3 class="text-xl font-semibold text-gray-800">Engine Rebuilds</h3>
+    <p class="text-gray-600 mt-2">We offer complete engine rebuild services to enhance the performance and longevity of your vehicle's engine.</p>
+  </div>
+</div>
+
+<!-- Card 2: Turbo Upgrades -->
+<div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden flex items-center p-6">
+  <div>
+    <i class="fas fa-tachometer-alt text-4xl text-red-900 mb-4"></i>
+    <h3 class="text-xl font-semibold text-gray-800">Turbo Upgrades</h3>
+    <p class="text-gray-600 mt-2">Boost your vehicle's power with our top-of-the-line turbocharger upgrades and installations.</p>
+  </div>
+</div>
+
+<!-- Card 3: Software Tuning & Mapping -->
+<div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden flex items-center p-6">
+  <div>
+    <i class="fas fa-tachograph-digital text-4xl text-red-900 mb-4"></i>
+    <h3 class="text-xl font-semibold text-gray-800">Software Tuning & Mapping</h3>
+    <p class="text-gray-600 mt-2">Optimize your engine's performance with custom tuning and mapping for better fuel efficiency and power output.</p>
+  </div>
+</div>
+
+<!-- Card 4: ECU -->
+<div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden flex items-center p-6">
+  <div>
+    <i class="fas fa-microchip text-4xl text-red-900 mb-4"></i>
+    <h3 class="text-xl font-semibold text-gray-800">ECU</h3>
+    <p class="text-gray-600 mt-2">We specialize in ECU remapping and repairs to ensure your vehicle operates at its peak performance.</p>
+  </div>
+</div>
+      </div>
+      <div class="flex justify-center mt-8">
+        <a href="#" class="text-red-900 hover:underline font-semibold text-lg flex items-center">
+          View More
+          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </div>      
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 bg-red-900 text-gray-50">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
+        <img src="images/team.jpg" alt="About Lethal Motorsports" class="rounded-lg shadow-lg w-full max-w-lg md:max-w-xl object-cover">
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-xl text-gray-400 mb-4">About Us <br> <span class="text-4xl font-bold text-gray-50">How We Got Our Passion For What We Love Doing</span></h2>
+        <p class="text-lg mb-4">We have more then 10 years of experience in building performance vehicles and other mechanical work, but since opening our shop in 2017, we have become masters of our craft. Our commitment to quality products, exceptional services and incomparable customer care keep our community coming back again and again.</p>
+        <p class="text-lg">We never stop improving, and will continue to expand our offerings based on how we can best serve the Race community. Get in touch with us today to learn how Lethal Motorsport can help you to become part of the "racing family".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Builds Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-xl text-center text-gray-400 mb-10">Featured Build <br> <span class="text-5xl font-bold text-gray-800">Golf GTI</span></h2>
+
+      <!-- Top Featured Build -->
+      <div class="flex flex-col md:flex-row items-start gap-12 mb-16">
+        <div class="md:w-1/2 w-full flex justify-center">
+          <img src="images/golf.jpg" alt="800HP Supra Build" class="rounded-lg shadow-lg w-full max-w-base object-cover">
+        </div>
+        <div class="md:w-1/2 w-full">
+          <p class="text-lg mb-4">A fully modified Golf GTI, pushing 430HP with top-tier upgrades including a high-performance turbo, ECU remap, and custom exhaust system, offering both track-ready performance and street driving excitement.</p>
+          <ul class="list-inside text-gray-800 space-y-2">
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> High-performance turbocharger for increased power and optimized airflow.</li>
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> Custom ECU tuning to maximize engine output while maintaining reliability.</li>
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> Performance exhaust system for improved airflow, reduced backpressure, and a more aggressive sound.</li>
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> Custom cold air intake to enhance throttle response and sustain power under heavy driving.</li>
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> Upgraded suspension with adjustable coilovers for better handling and stability.</li>
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> Enhanced braking system with larger rotors and multi-piston calipers for improved stopping power.</li>
+            <li><img src="images/car.svg" alt="Car icon" class="inline-block w-8 h-8 mr-2 align-middle"> Upgraded cooling system with an intercooler and additional radiators to prevent overheating during high-performance use.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 4-Column Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <img src="images/build1.jpg" alt="BMW M3" class="rounded-lg shadow-md object-cover w-full h-48">
+        <img src="images/build2.jpg" alt="Audi A3" class="rounded-lg shadow-md object-cover w-full h-48">
+        <img src="images/build3.jpg" alt="Nissan GTR" class="rounded-lg shadow-md object-cover w-full h-48">
+        <img src="images/build4.jpg" alt="Golf GTI" class="rounded-lg shadow-md object-cover w-full h-48">
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-16 bg-red-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-xl text-center text-gray-400 mb-10">Achievements <br> <span class="text-4xl font-bold text-gray-50">Our Biggest And Proudest Achievements</span></h2>
+      <!-- Two images side by side with overlapping cards -->
+      <div class="relative w-full mb-10">
+        <div class="flex flex-col md:flex-row w-full">
+          <img src="images/achieve2.avif" alt="Achievement 1" class="w-full md:w-1/2 h-120 object-cover rounded-l-lg md:rounded-l-lg md:rounded-r-none rounded-t-lg md:rounded-t-none">
+          <img src="images/achieve3.avif" alt="Achievement 2" class="w-full md:w-1/2 h-120 object-cover rounded-r-lg md:rounded-r-lg md:rounded-l-none rounded-b-lg md:rounded-b-none md:ml-0 -mt-px md:mt-0">
+        </div>
+        
+      </div>
+      <!-- Achievements Text (no cards, improved alignment, with centered borders) -->
+      <div class="flex flex-col md:flex-row gap-8 mt-8 border-t border-gray-200 pt-8 md:divide-x md:divide-gray-200">
+        <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left mx-auto max-w-xs px-6">
+          <div class="text-xl font-bold text-gray-50 mb-2">New Generation VAG</div>
+          <ul class="text-gray-200 list-inside text-sm space-y-1">
+            <li># 400m on 10.368sec @ exit speed of 215km/h</li>
+            <li># 800m @ exit speed of 257.69km/h</li>
+            <li># Kilometer @ a whopping 271.69km/h</li>
+          </ul>
+        </div>
+        <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left mx-auto max-w-xs px-6 justify-center">
+          <div class="text-xl font-bold text-gray-50 mb-2">First Stage 2 Hybrid GTi 7</div>
+          <p class="text-gray-200 text-sm mt-2">Pushing out 460hp with a stock engine and full family and daily vehicle, running a 247km/h on the kilo @ a 11.9sec.</p>
+        </div>
+        <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left mx-auto max-w-xs px-6">
+          <div class="text-xl font-bold text-gray-50 mb-2">FWD VW Clubsport</div>
+          <p class="text-gray-200 text-sm mt-2">Run a 11.96sec @ exit off 192km/h on the 400m, making it at that stage in February 2019</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <h2 class="text-xl text-center text-gray-400 mb-10">Contact <br> <span class="text-4xl font-bold text-gray-800">Feel Free To Get In Contact With Us</span></h2>
+      <div class="bg-white rounded-2xl shadow-2xl p-10 md:p-16 flex flex-col md:flex-row gap-14 items-stretch">
+        <!-- Map -->
+        <div class="md:w-2/3 flex justify-center items-center mb-8 md:mb-0">
+          <div class="w-full h-[32rem] rounded-2xl overflow-hidden grayscale border border-gray-300 shadow">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=18.4232%2C-33.9189%2C18.4232%2C-33.9189&amp;layer=mapnik"
+              class="w-full h-full border-0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Lethal Motorsports Location Map"
+            ></iframe>
+          </div>
+        </div>
+        <!-- Contact Form -->
+        <div class="md:w-1/3 flex items-center">
+          <form class="w-full space-y-6">
+        <div>
+          <label class="block mb-2 font-semibold" for="name">Name</label>
+          <input class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" type="text" id="name" placeholder="Your Name">
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold" for="phone">Phone</label>
+          <input class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" type="text" id="phone" placeholder="Your Phone Number">
+        </div>
+        <div>
+              <label class="block mb-2 font-semibold" for="vehicle">Vehicle Model</label>
+              <input class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" type="text" id="vehicle" placeholder="e.g. Golf GTI, Audi A3">
+            </div>
+            <div>
+              <label class="block mb-2 font-semibold" for="service">Service Needed</label>
+              <select class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" id="service">
+                <option value="">Select a service</option>
+                <option value="engine-rebuild">Engine Rebuild</option>
+                <option value="turbo-upgrade">Turbo Upgrade</option>
+                <option value="software-tuning">Software Tuning & Mapping</option>
+                <option value="ecu">ECU</option>
+                <option value="general-repair">General Repair</option>
+                <option value="custom-fabrication">Custom Fabrication</option>
+              </select>
+        </div>
+        <div>
+              <label class="block mb-2 font-semibold" for="date">Date</label>
+              <input class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" type="date" id="date">
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold" for="message">Message</label>
+          <textarea class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500" id="message" rows="4" placeholder="Your message..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-red-900 hover:bg-red-500 text-white font-semibold py-3 rounded-full">Send Message</button>
+      </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-50 pt-12 pb-6 ">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <!-- Logo & Tagline -->
+      <div class="flex flex-col items-start">
+        <img src="images/logo.avif" alt="Lethal Motorsports Logo" class="h-16 mb-4">
+        <p>Speed Science. Perfected.<br>Performance & Mechanic Shop</p>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#home" class="hover:text-red-500 transition">Home</a></li>
+          <li><a href="#about" class="hover:text-red-500 transition">About Us</a></li>
+          <li><a href="#services" class="hover:text-red-500 transition">Services</a></li>
+          <li><a href="#achievements" class="hover:text-red-500 transition">Achievements</a></li>
+          <li><a href="#contact" class="hover:text-red-500 transition">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+        <ul class="space-y-2">
+          <li><i class="fas fa-map-marker-alt mr-2 text-gray-50"></i>Cape Town, South Africa</li>
+          <li><i class="fas fa-phone mr-2 text-gray-50"></i>+27 12 345 6789</li>
+          <li><i class="fas fa-envelope mr-2 text-gray-50"></i>info@lethalmotorsport.co.za</li>
+        </ul>
+      </div>
+      <!-- Social Media -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-50 hover:text-red-900 text-2xl"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-50 hover:text-red-900 text-2xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-50 hover:text-red-900 text-2xl"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-50 text-sm">
+      &copy; 2024 Lethal Motorsports. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html> 
